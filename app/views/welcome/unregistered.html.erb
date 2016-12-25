@@ -69,14 +69,16 @@
         <h5 class="header col s12 light">Regístrese hoy de forma gratuita y sea el primero en recibir notificaciones sobre las nuevas actualizaciones.</h5>
       </div>      
       <div class="row">
-    <form class="col s12">              
+    <div class="col s12">              
       <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
+          <%= form_tag(create_email_path, method: :post) do  %> 
+            <%= email_field_tag "email", nil, class:"validate" %>
+            <label for="email">Email</label>            
+          <% end %>
         </div>
       </div>      
-    </form>
+    </div>
   </div>
       <br><br>
   </div>
